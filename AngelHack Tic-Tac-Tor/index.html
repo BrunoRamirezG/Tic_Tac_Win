@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Win Game</title>
+    <title>Tic-Tac-Toe Game</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Pantalla de inicio de sesión -->
     <div id="login-screen">
-        <img src="tic_tac_win_logo.PNG" alt="Tic Tac Win Logo" id="logo">
-        <h1>Welcome to Tic-Tac-Win!</h1>
+        <h1>Welcome to Tic-Tac-Toe!</h1>
         <input type="text" id="username" placeholder="Enter your name">
-        <button class="primary-btn" onclick="startGame()">Start Game</button>
+        <button onclick="startGame()">Start Game</button>
     </div>
 
-    <!-- Pantalla del juego -->
     <div id="game-screen" style="display:none;">
-        <h1>Tic-Tac-Win</h1>
+        <h1>Tic-Tac-Toe</h1>
         <p id="instructions">Click on a cell to make your move. You play as "X".</p>
         <div id="board">
             <div class="cell" onclick="makeMove(0)"></div>
@@ -32,7 +29,7 @@
             <div class="cell" onclick="makeMove(8)"></div>
         </div>
         <p id="result"></p>
-        <button class="secondary-btn" onclick="resetGame()">Reset Game</button>
+        <button onclick="resetGame()">Reset Game</button>
     </div>
 
     <script src="script.js"></script>
