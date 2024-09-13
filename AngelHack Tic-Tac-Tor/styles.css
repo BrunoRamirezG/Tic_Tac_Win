@@ -1,83 +1,112 @@
-/* Configuración básica de fuente y colores */
+/* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
-    background-color: #f0f4f8;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background: linear-gradient(135deg, #81f406, #e1ff74e8);
     height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
 }
 
 h1 {
-    font-size: 2.5rem;
-    color: #333;
+    margin-bottom: 20px;
 }
 
 #login-screen, #game-screen {
-    width: 90%;
-    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.2);
     padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    width: 100%;
+}
+
+#scoreboard {
+    margin-bottom: 10px;
 }
 
 input[type="text"] {
-    width: 80%;
     padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
+    width: calc(100% - 22px);
+    margin-bottom: 15px;
+    border: none;
     border-radius: 5px;
-    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre los puntajes */
+    background-color: #2E2E2E; /* Fondo oscuro */
+    padding: 15px 30px;
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin: 20px auto;
+    max-width: 300px; /* Ancho máximo */
+}
+
+#scoreboard p {
+    font-family: 'Arial', sans-serif; /* Fuente limpia */
+    font-size: 18px;
+    color: #ECF0F1; /* Texto claro */
+    margin: 0;
+    padding: 5px 15px;
+    background-color: #34495E; /* Fondo de los textos */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Sombra para los textos */
+    text-align: center;
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
+    padding: 12px 20px;
+    font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #81f406;
+    color: #ffffff;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #81f406;
 }
 
 #board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-    margin: 20px 0;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 300px;
 }
 
 .cell {
-    width: 100%;
-    padding-bottom: 100%;
-    background-color: #f9f9f9;
-    border: 2px solid #ddd;
-    font-size: 3rem;
+    background-color: #ffffff;
+    color: #81f406;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 3em;
+    height: 100px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .cell:hover {
-    background-color: #e9ecef;
+    background-color: #81f406;
+    color: #ffffff;
     transform: scale(1.05);
 }
 
 #result {
-    font-size: 1.2rem;
-    color: #007bff;
+    font-size: 1.2em;
     margin-top: 10px;
 }

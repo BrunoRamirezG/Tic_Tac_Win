@@ -9,13 +9,23 @@
 </head>
 <body>
     <div id="login-screen">
-        <h1>Welcome to Tic-Tac-Toe!</h1>
+        
+        <h1>Welcome to <br> Tic-Tac-Win!</h1>
         <input type="text" id="username" placeholder="Enter your name">
         <button onclick="startGame()">Start Game</button>
     </div>
 
+   
+    
+
     <div id="game-screen" style="display:none;">
         <h1>Tic-Tac-Toe</h1>
+
+        <div id="scoreboard">
+            <p id="scoreX">Player X: 0</p>
+            <p id="scoreO">Player O: 0</p>
+        </div>
+        
         <p id="instructions">Click on a cell to make your move. You play as "X".</p>
         <div id="board">
             <div class="cell" onclick="makeMove(0)"></div>

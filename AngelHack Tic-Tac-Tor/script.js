@@ -1,10 +1,11 @@
 let board = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = "X";
 let gameActive = true;
+let score = { X: 0, O: 0 }; // Objeto para almacenar el puntaje de ambos jugadores
 const winConditions = [
-    [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
-    [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
-    [0, 4, 8], [2, 4, 6]             // Diagonals
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], // Filas
+    [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columnas
+    [0, 4, 8], [2, 4, 6]             // Diagonales
 ];
 
 function startGame() {
@@ -12,6 +13,7 @@ function startGame() {
     if (username) {
         document.getElementById("login-screen").style.display = 'none';
         document.getElementById("game-screen").style.display = 'block';
+        updateScoreDisplay();
     } else {
         alert("Please enter your name to start the game.");
     }
@@ -23,6 +25,8 @@ function makeMove(index) {
         document.getElementsByClassName("cell")[index].innerText = currentPlayer;
         if (checkWin()) {
             document.getElementById("result").innerText = `Player ${currentPlayer} wins!`;
+            score[currentPlayer]++; // Incrementar el puntaje del jugador ganador
+            updateScoreDisplay(); // Actualizar la visualización del puntaje
             gameActive = false;
         } else if (board.includes("")) {
             currentPlayer = currentPlayer === "X" ? "O" : "X";
@@ -44,6 +48,8 @@ function makeAIMove() {
         document.getElementsByClassName("cell")[aiMove].innerText = currentPlayer;
         if (checkWin()) {
             document.getElementById("result").innerText = `Player ${currentPlayer} wins!`;
+            score[currentPlayer]++; // Incrementar el puntaje del jugador ganador
+            updateScoreDisplay(); // Actualizar la visualización del puntaje
             gameActive = false;
         } else {
             currentPlayer = "X";
@@ -63,4 +69,10 @@ function resetGame() {
     gameActive = true;
     document.querySelectorAll(".cell").forEach(cell => cell.innerText = "");
     document.getElementById("result").innerText = "";
+}
+
+// Función para actualizar la visualización del puntaje
+function updateScoreDisplay() {
+    document.getElementById("scoreX").innerText = `Player X: ${score.X}`;
+    document.getElementById("scoreO").innerText = `Player O: ${score.O}`;
 }
